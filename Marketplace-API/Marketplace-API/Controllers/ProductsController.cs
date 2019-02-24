@@ -16,7 +16,9 @@ namespace MarketplaceAPI.Controllers
             _productBusiness = productBusiness;
         }
 
-        // GET api/products
+        /// <summary>
+        /// Get all Products in database
+        /// </summary>
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)]
@@ -27,7 +29,9 @@ namespace MarketplaceAPI.Controllers
             return Ok(_productBusiness.FindAll());
         }
 
-        // GET api/products/5
+        /// <summary>
+        /// Get specific product by ID
+        /// </summary>
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)]
@@ -41,7 +45,9 @@ namespace MarketplaceAPI.Controllers
             return Ok(product);
         }
 
-        // GET api/products/5
+        /// <summary>
+        /// Find by product by any term. Example (ttribute: Category, Term: Hardware)
+        /// </summary>
         [HttpGet("{atrribute}/{term}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)]
@@ -58,7 +64,9 @@ namespace MarketplaceAPI.Controllers
             return Ok(product);
         }
 
-        // POST api/products
+        /// <summary>
+        /// Create new product
+        /// </summary>
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
@@ -69,7 +77,9 @@ namespace MarketplaceAPI.Controllers
             return new ObjectResult(_productBusiness.Create(product));
         }
 
-        // PUT api/products/5
+        /// <summary>
+        /// Change values ​​from a existing product
+        /// </summary>
         [HttpPut]
         [ProducesResponseType(202)]
         [ProducesResponseType(400)]
@@ -82,7 +92,9 @@ namespace MarketplaceAPI.Controllers
             return new ObjectResult(updatedProduct);
         }
 
-        // DELETE api/products/5
+        /// <summary>
+        /// Delete product by Id
+        /// </summary>
         [HttpDelete("{id}")]
         [ProducesResponseType(202)]
         [ProducesResponseType(400)]

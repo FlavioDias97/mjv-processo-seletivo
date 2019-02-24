@@ -24,8 +24,8 @@ namespace MarketplaceAPI.Model
         [DataMember(Order = 7, Name = "Quantidade em estoque")]
         public int Quantity { get; set; }
 
-        [DataMember(Order = 8, Name = "Id da loja")]
-        public int store_id { get; set; }
+        [DataMember(Order = 8, Name = "Disponível em")]
+        public string store_id { get; set; }
 
 
 
