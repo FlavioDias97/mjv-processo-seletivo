@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 namespace MarketplaceAPI.Repository.Implementattions
 {
-    public interface IStoreRepository
+    public interface IUserRepository
     {
-        //using only generics yet
+        User FindByLogin(string login);
     }
 }

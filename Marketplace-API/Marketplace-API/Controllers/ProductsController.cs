@@ -1,6 +1,7 @@
 ﻿using MarketplaceAPI.Model;
 using MarketplaceAPI.Business.Implementattions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MarketplaceAPI.Controllers
 {
@@ -24,6 +25,7 @@ namespace MarketplaceAPI.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
+        //[Authorize("Bearer")]
         public IActionResult Get()
         {
             return Ok(_productBusiness.FindAll());
@@ -38,6 +40,7 @@ namespace MarketplaceAPI.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
         [ProducesResponseType(404)]
+        [Authorize("Bearer")]
         public IActionResult Get(int id)
         {
             var product = _productBusiness.FindById(id);
@@ -54,6 +57,7 @@ namespace MarketplaceAPI.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
         [ProducesResponseType(404)]
+        [Authorize("Bearer")]
         public IActionResult FindByTerm(string atrribute, string term)
         {
             //Attribute and term canot be null
@@ -71,6 +75,7 @@ namespace MarketplaceAPI.Controllers
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
+        [Authorize("Bearer")]
         public IActionResult Post([FromBody]Product product)
         {
             if (product == null) return BadRequest();
@@ -84,6 +89,7 @@ namespace MarketplaceAPI.Controllers
         [ProducesResponseType(202)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
+        [Authorize("Bearer")]
         public IActionResult Put([FromBody]Product product)
         {
             if (product == null) return BadRequest();
@@ -99,6 +105,7 @@ namespace MarketplaceAPI.Controllers
         [ProducesResponseType(202)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
+        [Authorize("Bearer")]
         public IActionResult Delete(int id)
         {
             _productBusiness.Delete(id);
