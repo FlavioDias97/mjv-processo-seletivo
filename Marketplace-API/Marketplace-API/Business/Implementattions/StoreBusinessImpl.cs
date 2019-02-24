@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using MarketplaceAPI.Model;
 using MarketplaceAPI.Model.Context;
+using MarketplaceAPI.Repository.Generic;
 using MarketplaceAPI.Repository.Implementattions;
 
 namespace MarketplaceAPI.Business.Implementattions
 {
     public class StoreBusinessImpl : IStoreBusiness
     {
-        private IStoreRepository _repository;
+        private IRepository<Store> _repository;
 
-        public StoreBusinessImpl(IStoreRepository repository)
+        public StoreBusinessImpl(IRepository<Store> repository)
         {
             _repository = repository;
         }

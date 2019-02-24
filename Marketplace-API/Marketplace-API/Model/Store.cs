@@ -1,25 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MarketplaceAPI.Model.Base;
 
 namespace MarketplaceAPI.Model
 {
-    public class Store{
-        //public Store(long id, string fantasyName, string cnpj, string corporateName, string address, string phone, string responsible)
-        //{
-        //    Id = id;
-        //    FantasyName = fantasyName;
-        //    Cnpj = cnpj;
-        //    CorporateName = corporateName;
-        //    Address = address;
-        //    Phone = phone;
-        //    Responsible = responsible;
-        //}
-
-        [Key]
-        public long? Id { get; set; }
+    public class Store : BaseEntity
+    {
 
         public string FantasyName { get; set; }
 

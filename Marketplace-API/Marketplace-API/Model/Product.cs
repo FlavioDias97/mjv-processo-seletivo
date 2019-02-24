@@ -1,12 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MarketplaceAPI.Model.Base;
 
 
 namespace MarketplaceAPI.Model
 {
-    public class Product{
-
-        [Key]
-        public long? Id { get; set; }
+    public class Product : BaseEntity
+    {
 
         public string ProductName { get; set; }
 
@@ -17,6 +15,8 @@ namespace MarketplaceAPI.Model
         public string Image { get; set; }
 
         public int Price { get; set; }
+
+        public int Quantity { get; set; }
 
         public int store_id { get; set; }
 
