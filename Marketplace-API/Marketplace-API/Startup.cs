@@ -7,13 +7,11 @@ using MarketplaceAPI.Model.Context;
 using MarketplaceAPI.Repository.Implementattions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+
 
 namespace Marketplace_API
 {
@@ -34,9 +32,13 @@ namespace Marketplace_API
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddApiVersioning();
         
-            //Dependency injection
+            //Dependency injection for store
             services.AddScoped<IStoreBusiness, StoreBusinessImpl>();
             services.AddScoped<IStoreRepository, StoreRepositoryimpl>();
+
+            //Dependency injection for products
+            services.AddScoped<IProductBusiness, ProductBusinessImpl>();
+            services.AddScoped<IProductRepository, ProductRepositoryImpl>();
 
 
         }

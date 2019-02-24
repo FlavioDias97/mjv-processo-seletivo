@@ -16,14 +16,14 @@ namespace MarketplaceAPI.Controllers
             _storeBusiness = storeBusiness;
         }
 
-        // GET api/values
+        // GET api/stores
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(_storeBusiness.FindAll());
         }
 
-        // GET api/values/5
+        // GET api/stores/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -32,7 +32,7 @@ namespace MarketplaceAPI.Controllers
             return Ok(store);
         }
 
-        // POST api/values
+        // POST api/stores
         [HttpPost]
         public IActionResult Post([FromBody]Store store)
         {
@@ -40,7 +40,7 @@ namespace MarketplaceAPI.Controllers
             return new ObjectResult(_storeBusiness.Create(store));
         }
 
-        // PUT api/values/5
+        // PUT api/stores/5
         [HttpPut("")]
         public IActionResult Put([FromBody]Store store)
         {
@@ -48,7 +48,7 @@ namespace MarketplaceAPI.Controllers
             return new ObjectResult(_storeBusiness.Update(store));
         }
 
-        // DELETE api/values/5
+        // DELETE api/stores/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
