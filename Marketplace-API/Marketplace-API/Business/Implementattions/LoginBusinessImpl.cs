@@ -43,7 +43,7 @@ namespace MarketplaceAPI.Business.Implementattions
 
                     );
                 DateTime createDate = DateTime.Now;
-                DateTime expirationDate = createDate + TimeSpan.FromSeconds(Double.Parse(_tokenConfigurations.Seconds));
+                DateTime expirationDate = createDate + TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
 
                 var handler = new JwtSecurityTokenHandler();
                 string token = CreateToken(identity, createDate, expirationDate, handler);
@@ -61,7 +61,7 @@ namespace MarketplaceAPI.Business.Implementattions
             return new
             {
                 authenticated = false,
-                message = "Failed to authentication"
+                message = "Failed to authenticate"
             };
         }
 

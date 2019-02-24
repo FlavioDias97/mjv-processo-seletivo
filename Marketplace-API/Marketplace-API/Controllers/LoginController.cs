@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace MarketplaceAPI.Controllers
 {
     [ApiVersion("1")]
-    [Route("api/v{version:apiVersion}")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class LoginController : ControllerBase
     {
@@ -19,7 +19,7 @@ namespace MarketplaceAPI.Controllers
 
         
         [AllowAnonymous]
-        [HttpPost("")]
+        [HttpPost]
         public object Post([FromBody]User user)
         {
             if (user == null) return BadRequest();

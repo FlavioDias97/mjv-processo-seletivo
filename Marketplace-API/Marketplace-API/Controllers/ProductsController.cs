@@ -25,7 +25,7 @@ namespace MarketplaceAPI.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
-        //[Authorize("Bearer")]
+        [Authorize("Bearer")]
         public IActionResult Get()
         {
             return Ok(_productBusiness.FindAll());

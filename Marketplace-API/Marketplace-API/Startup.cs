@@ -40,14 +40,6 @@ namespace Marketplace_API
             services.AddDbContext<MySQLContext>(options => options.UseMySql(connectionString));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-
-            services.AddApiVersioning();
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "REST API for MJV Marketplace", Version = "v1" });
-            });
-
             var signingConfigurations = new SigningConfigurations();
             services.AddSingleton(signingConfigurations);
 
@@ -93,7 +85,14 @@ namespace Marketplace_API
                     .RequireAuthenticatedUser().Build());
             });
 
+            services.AddApiVersioning();
 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "REST API for MJV Marketplace", Version = "v1" });
+            });
+
+          
             //Dependency injection for store
             services.AddScoped<IStoreBusiness, StoreBusinessImpl>();
 
