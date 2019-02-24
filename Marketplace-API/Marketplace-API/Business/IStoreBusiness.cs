@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 
 
-namespace MarketplaceAPI.Services.Implementattions
+namespace MarketplaceAPI.Business.Implementattions
 {
-    public interface IStoreService
+    public interface IStoreBusiness
     {
         Store Create(Store store);
         Store FindById(long id);

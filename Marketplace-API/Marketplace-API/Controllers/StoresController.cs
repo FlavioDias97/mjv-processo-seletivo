@@ -1,32 +1,33 @@
 ﻿using MarketplaceAPI.Model;
-using MarketplaceAPI.Services.Implementattions;
+using MarketplaceAPI.Business.Implementattions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiVersion("1")]
+    [Route("api/v{version:apiVersion}/stores")]
     [ApiController]
     public class StoresController : ControllerBase
     {
 
-        private IStoreService _storeService;
-        public StoresController(IStoreService storeService)
+        private IStoreBusiness _storeBusiness;
+        public StoresController(IStoreBusiness storeBusiness)
         {
-            _storeService = storeService;
+            _storeBusiness = storeBusiness;
         }
 
         // GET api/values
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_storeService.FindAll());
+            return Ok(_storeBusiness.FindAll());
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var store = _storeService.FindById(id);
+            var store = _storeBusiness.FindById(id);
             if (store == null) return NotFound(); 
             return Ok(store);
         }
@@ -36,22 +37,22 @@ namespace MarketplaceAPI.Controllers
         public IActionResult Post([FromBody]Store store)
         {
             if (store == null) return BadRequest();
-            return new ObjectResult(_storeService.Create(store));
+            return new ObjectResult(_storeBusiness.Create(store));
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
+        [HttpPut("")]
         public IActionResult Put([FromBody]Store store)
         {
             if (store == null) return BadRequest();
-            return new ObjectResult(_storeService.Update(store));
+            return new ObjectResult(_storeBusiness.Update(store));
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _storeService.Delete(id);
+            _storeBusiness.Delete(id);
             return NoContent();
         }
     }

@@ -19,7 +19,7 @@ namespace MarketplaceAPI.Model
         //}
 
         [Key]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         public string FantasyName { get; set; }
 
