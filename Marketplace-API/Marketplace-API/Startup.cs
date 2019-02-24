@@ -9,6 +9,7 @@ using MarketplaceAPI.Repository.Implementattions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -40,6 +41,13 @@ namespace Marketplace_API
 
 
             services.AddApiVersioning();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "REST API for MJV Marketplace", Version = "v1" });
+            });
+
+            
         
             //Dependency injection for store
             services.AddScoped<IStoreBusiness, StoreBusinessImpl>();
@@ -58,6 +66,16 @@ namespace Marketplace_API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "MJV Marketplace v1");
+            });
+
+            var option = new RewriteOptions();
+            option.AddRedirect("^$", "swagger");
+            app.UseRewriter(option);
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

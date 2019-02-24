@@ -18,13 +18,21 @@ namespace MarketplaceAPI.Controllers
 
         // GET api/stores
         [HttpGet]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Get()
         {
             return Ok(_storeBusiness.FindAll());
         }
 
         // GET api/stores/5
-        [HttpGet("{id}")]
+        [HttpGet("v1/{id}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Get(int id)
         {
             var store = _storeBusiness.FindById(id);
@@ -34,6 +42,9 @@ namespace MarketplaceAPI.Controllers
 
         // POST api/stores
         [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Post([FromBody]Store store)
         {
             if (store == null) return BadRequest();
@@ -41,7 +52,10 @@ namespace MarketplaceAPI.Controllers
         }
 
         // PUT api/stores/5
-        [HttpPut("")]
+        [HttpPut("v1/")]
+        [ProducesResponseType(202)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Put([FromBody]Store store)
         {
             if (store == null) return BadRequest();
@@ -51,7 +65,10 @@ namespace MarketplaceAPI.Controllers
         }
 
         // DELETE api/stores/5
-        [HttpDelete("{id}")]
+        [HttpDelete("v1/{id}")]
+        [ProducesResponseType(202)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Delete(int id)
         {
             _storeBusiness.Delete(id);
