@@ -45,7 +45,9 @@ namespace MarketplaceAPI.Controllers
         public IActionResult Put([FromBody]Store store)
         {
             if (store == null) return BadRequest();
-            return new ObjectResult(_storeBusiness.Update(store));
+            var updatedStore = _storeBusiness.Update(store);
+            if (updatedStore == null) return NoContent();
+            return new ObjectResult(updatedStore);
         }
 
         // DELETE api/stores/5

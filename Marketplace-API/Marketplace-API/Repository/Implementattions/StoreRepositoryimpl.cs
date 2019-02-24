@@ -59,7 +59,7 @@ namespace MarketplaceAPI.Repository.Implementattions
 
         public Store Update(Store store)
         {
-            if (!Exist(store.Id)) return new Store();
+            if (!Exist(store.Id)) return null;
 
             var result = _context.Stores.SingleOrDefault(s => s.Id.Equals(store.Id));
             try

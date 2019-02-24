@@ -16,11 +16,11 @@ namespace MarketplaceAPI.Repository.Implementattions
         }
 
     
-        public Product Create(Product Product)
+        public Product Create(Product product)
         {
             try
             {
-                _context.Add(Product);
+                _context.Add(product);
                 _context.SaveChanges();
             }
             catch(Exception ex)
@@ -29,7 +29,7 @@ namespace MarketplaceAPI.Repository.Implementattions
             }
 
 
-            return Product;
+            return product;
         }
 
         public void Delete(long id)
@@ -58,21 +58,21 @@ namespace MarketplaceAPI.Repository.Implementattions
             return _context.Products.SingleOrDefault(s => s.Id.Equals(id));
         }
 
-        public Product Update(Product Product)
+        public Product Update(Product product)
         {
-            if (!Exist(Product.Id)) return new Product();
+            if (!Exist(product.Id)) return null;
 
-            var result = _context.Products.SingleOrDefault(s => s.Id.Equals(Product.Id));
+            var result = _context.Products.SingleOrDefault(s => s.Id.Equals(product.Id));
             try
             {
-                _context.Entry(result).CurrentValues.SetValues(Product);
+                _context.Entry(result).CurrentValues.SetValues(product);
                 _context.SaveChanges();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return Product;
+            return product;
         }
 
         public bool Exist(long? id)
