@@ -28,11 +28,12 @@ namespace MarketplaceAPI.Controllers
         }
 
         // GET api/stores/5
-        [HttpGet("v1/{id}")]
+        [HttpGet("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
+        [ProducesResponseType(404)]
         public IActionResult Get(int id)
         {
             var store = _storeBusiness.FindById(id);
@@ -40,8 +41,25 @@ namespace MarketplaceAPI.Controllers
             return Ok(store);
         }
 
+        // GET api/products/5
+        [HttpGet("{atrribute}/{term}")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        [ProducesResponseType(404)]
+        public IActionResult FindByTerm(string atrribute, string term)
+        {
+            //Attribute and term canot be null
+            if (atrribute == null || term == null) return BadRequest();
+            string entity = "stores"; //hardcoded entity for generic method    
+            var store = _storeBusiness.FindByTerm(entity, atrribute, term);
+            if (store == null) return NotFound();
+            return Ok(store);
+        }
+
         // POST api/stores
-        [HttpPost]
+        [HttpPost("")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
@@ -52,7 +70,7 @@ namespace MarketplaceAPI.Controllers
         }
 
         // PUT api/stores/5
-        [HttpPut("v1/")]
+        [HttpPut("")]
         [ProducesResponseType(202)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]
@@ -65,7 +83,7 @@ namespace MarketplaceAPI.Controllers
         }
 
         // DELETE api/stores/5
-        [HttpDelete("v1/{id}")]
+        [HttpDelete("{id}")]
         [ProducesResponseType(202)]
         [ProducesResponseType(400)]
         [ProducesResponseType(401)]

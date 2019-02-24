@@ -64,6 +64,15 @@ namespace MarketplaceAPI.Repository.Generic
             return dataset.SingleOrDefault(s => s.Id.Equals(id));
         }
 
+        public List<T> FindByTerm(string entity, string atrribute, string term)
+        {
+            string query = "SELECT * FROM "+ entity + " WHERE "+ atrribute + " LIKE '%"+ term + "%' ";
+            var result = dataset
+                .FromSql(query)
+                .ToList();
+            return result;
+        }
+
         public T Update(T item)
         {
             if (!Exist(item.Id)) return null;

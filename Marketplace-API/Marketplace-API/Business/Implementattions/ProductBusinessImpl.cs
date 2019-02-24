@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using MarketplaceAPI.Model;
-using MarketplaceAPI.Model.Context;
 using MarketplaceAPI.Repository.Generic;
-using MarketplaceAPI.Repository.Implementattions;
 
 namespace MarketplaceAPI.Business.Implementattions
 {
@@ -12,10 +8,7 @@ namespace MarketplaceAPI.Business.Implementattions
     {
         private IRepository<Product> _repository;
 
-        public ProductBusinessImpl(IRepository<Product> repository)
-        {
-            _repository = repository;
-        }
+        public ProductBusinessImpl(IRepository<Product> repository) => _repository = repository;
 
         public Product Create(Product product)
         {
@@ -32,11 +25,17 @@ namespace MarketplaceAPI.Business.Implementattions
             return _repository.FindAll();
         }
 
-
+        
         public Product FindById(long id)
         {
             return _repository.FindById(id); 
         }
+
+        public List<Product> FindByTerm(string entity, string atrribute, string term)
+        {
+            return _repository.FindByTerm(entity,atrribute, term);
+        }
+
 
         public Product Update(Product product)
         {

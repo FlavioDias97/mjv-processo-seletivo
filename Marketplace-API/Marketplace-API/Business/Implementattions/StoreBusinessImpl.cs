@@ -38,6 +38,11 @@ namespace MarketplaceAPI.Business.Implementattions
             return _repository.FindById(id); 
         }
 
+        public List<Store> FindByTerm(string entity, string atrribute, string term)
+        {
+            return _repository.FindByTerm(entity, atrribute, term);
+        }
+
         public Store Update(Store store)
         {
             return _repository.Update(store);
