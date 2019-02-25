@@ -11,7 +11,7 @@ namespace MarketplaceAPI.Model.Base
         [DataMember(Order = 1, Name = "Código")]
         public long? Id { get; set; }
 
-        [DataMember(Order = 2, Name = "Nome")]
-        public string Name { get; set; }
+        //[DataMember(Order = 2, Name = "Nome")]
+        //public string Name { get; set; }
     }
 }

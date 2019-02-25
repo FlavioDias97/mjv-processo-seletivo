@@ -6,8 +6,8 @@ namespace MarketplaceAPI.Model
     [DataContract]
     public class Store : BaseEntity
     {
-        //[DataMember(Order = 2, Name = "Nome Fantasia")]
-        //public string FantasyName { get; set; }
+        [DataMember(Order = 2, Name = "Nome Fantasia")]
+        public string FantasyName { get; set; }
 
         [DataMember(Order = 3, Name = "CNPJ")]
         public string Cnpj { get; set; }
