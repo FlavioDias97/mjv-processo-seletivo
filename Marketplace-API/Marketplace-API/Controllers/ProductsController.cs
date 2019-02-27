@@ -52,7 +52,7 @@ namespace MarketplaceAPI.Controllers
         /// <summary>
         /// Find by product by any term. Example (ttribute: Category, Term: Hardware)
         /// </summary>
-        [HttpGet("{atrribute}/{term}")]
+        [HttpGet("Search/{atrribute}/{term}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
