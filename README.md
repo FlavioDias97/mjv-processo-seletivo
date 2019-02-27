@@ -94,22 +94,52 @@ http://servidor:porta/api/v1/products/Search/ProductName/Geladeira
             "Nome do Produto": "GTX 1080 TI",
             " Descrição": "Placa de video",
             "Categoria": "Hardware",
-            "Imagem": "gtx1080.com/imagem",
-            "Preço": 1000,
+            "Imagem": "https://www.evga.com/articles/01092/images/header/ultimate.png",
+            "Preço": 3000,
             "Quantidade em estoque": 100,
-            "Loja": "Pichau informatica"
+            "Loja": "Pichau Informática"
+        },
+        {
+            "Código": 2,
+            "Nome do Produto": "RTX 2080 TI",
+            " Descrição": "Placa de video",
+            "Categoria": "Hardware",
+            "Imagem": "https://bit.ly/2BQOQaA",
+            "Preço": 5000,
+            "Quantidade em estoque": 20,
+            "Loja": "Pichau Informática"
         }
     ],
     "produtos_Relacionados": [
         {
             "Código": 1,
-            "Nome do Produto": "GTX 1050 TI",
+            "Nome do Produto": "GTX 1080 TI",
             " Descrição": "Placa de video",
             "Categoria": "Hardware",
-            "Imagem": "gtx1080.com/imagem",
-            "Preço": 1000,
+            "Imagem": "https://www.evga.com/articles/01092/images/header/ultimate.png",
+            "Preço": 3000,
             "Quantidade em estoque": 100,
-            "Loja": "Pichau informatica"
+            "Loja": "Pichau Informática"
+        },
+        {
+            "Código": 2,
+            "Nome do Produto": "RTX 2080 TI",
+            " Descrição": "Placa de video",
+            "Categoria": "Hardware",
+            "Imagem": "https://bit.ly/2BQOQaA",
+            "Preço": 5000,
+            "Quantidade em estoque": 20,
+            "Loja": "Pichau Informática"
+        },
+        {
+            "Código": 3,
+            "Nome do Produto": "GTX 1050 2GB",
+            " Descrição": "Placa de video low end",
+            "Categoria": "Hardware",
+            "Imagem": "https://bit.ly/2tFjMq0",
+            "Preço": 460,
+            "Quantidade em estoque": 500,
+            "Loja": "1"
         }
     ]
 }
