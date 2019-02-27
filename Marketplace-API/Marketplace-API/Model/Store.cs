@@ -1,8 +1,10 @@
 ﻿using MarketplaceAPI.Model.Base;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace MarketplaceAPI.Model
 {
+    [Table("stores")]
     [DataContract]
     public class Store : BaseEntity
     {

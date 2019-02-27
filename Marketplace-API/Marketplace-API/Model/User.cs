@@ -1,7 +1,10 @@
 ﻿
 
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace MarketplaceAPI.Model
 {
+    [Table("users")]
     public class User
     {
      
