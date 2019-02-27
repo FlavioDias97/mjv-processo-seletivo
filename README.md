@@ -182,7 +182,7 @@ Todas as rotas e exemplos são exibidas no swagger:
   <img alt="sergey" src="https://raw.githubusercontent.com/FlavioDias97/mjv-processo-seletivo/master/Contents/Imagens/swagger.png?token=AYq4whmP-P-wR90MkJCm9JDQ61lNFi3wks5cdjHtwA%3D%3D">
 </p>
 
-## Guia básico para como testar
+## Importante: como autenticar antes de enviar requisições
 
 Antes de realizar qualquer requisição com o servidor, será necessário efetuar o login para receber o token de autenticação, para isso, realize um post para a rota `https://servidor:porta/api/v1/login` com o seguinte body em `raw / type JSON(application/json)` :
 
