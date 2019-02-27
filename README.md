@@ -15,9 +15,9 @@ Para instalar o [docker no windows](https://docs.docker.com/v17.12/docker-for-wi
 
 ### Docker
 
-Com o docker, execute os seguintes comandos na raiz do projeto **Marketplace-API-Docker**:
+Com o docker, execute os seguintes comandos na raiz do projeto **Marketplace-API-Docker**:[Aqui](https://github.com/FlavioDias97/mjv-processo-seletivo/tree/master/Marketplace-API-Docker).
 - Abra o terminal na raiz do projeto, e execute o seguinte comando : `docker-compose up -d --build`
-- O banco de dados deve ter sido criado automaticamente no conteiner criado, conecte-se ao mesmo utilizando um sgbd de sua preferencia e execute o script **INSERIR LINK PARA SCRIPT AQUI** que irá criar as tabelas e cadastrar alguns dados.
+- O banco de dados deve ter sido criado automaticamente no conteiner criado, conecte-se ao mesmo utilizando um sgbd de sua preferencia e execute o script [DATABASE CREATE SCRIPT](https://github.com/FlavioDias97/mjv-processo-seletivo/blob/master/Contents/Banco%20de%20dados/Backup.sql). que irá criar as tabelas e cadastrar alguns dados.
 - Executando o seguinte comando, `docker ps -a`, deverá ver a seguinte saída:
 
 ```
@@ -30,9 +30,10 @@ b3e40287500e        jeltor/marketplace-api   "dotnet MarketplaceA…"   6 second
 
 ### Executar através do visual studio
 
-- No visual studio vá até carregar nova solução, e execute a da pasta **Marketplace-API-Clean**. E através da `ide` ao clickar em iniciar com `IISExpress` a api estará rodando em `http://localhost:3000/swagger/index.html` .
+- No visual studio vá até carregar nova solução, e execute a da pasta **Marketplace-API-Clean**:[Aqui](https://github.com/FlavioDias97/mjv-processo-seletivo/tree/master/Marketplace-API%20-Clean).
+E através da `ide` ao clickar em iniciar com `IISExpress` a api estará rodando em `http://localhost:3000/swagger/index.html` .
 
-- Também será necessário criar a base de dados, certifique-se de estar rodando um servidor mysql em sua máquina, e execute o seguinte script no `terminal mysql` ou em um `sgbd` : **INSERIR LINK PARA SCRIPT SQL AQUI**.
+- Também será necessário criar a base de dados, certifique-se de estar rodando um servidor mysql em sua máquina, e execute o seguinte script no `terminal mysql` ou em um `sgbd` : [DATABASE CREATE SCRIPT](https://github.com/FlavioDias97/mjv-processo-seletivo/blob/master/Contents/Banco%20de%20dados/Backup.sql)..
 
 - Como as configurações do mysql podem variar de maquina para maquina, será necessário de configurar a URL de conexão. Para isso, vá até a raiz do projeto, entre na pasta `Marketplace-API`, e então localize o arquivo `appsettings.json`, lá você encontrará o seguinte trecho:
 
@@ -132,7 +133,12 @@ Body:
 
 ```
 
-Todas as rotas e exemplos são exibidas no swagger.
+Todas as rotas e exemplos são exibidas no swagger:
+
+
+<p align="center">
+  <img alt="sergey" src="https://raw.githubusercontent.com/FlavioDias97/mjv-processo-seletivo/master/Contents/Imagens/swagger.png?token=AYq4whmP-P-wR90MkJCm9JDQ61lNFi3wks5cdjHtwA%3D%3D">
+</p>
 
 ## Guia básico para como testar
 
@@ -162,4 +168,10 @@ E terá uma resposta parecida com isto:
 
 - Onde o conteúdo de `acessToken` será a chave necessária para autenticar as outras requisições. No postman, este `acessToken` deverá ser utilizado da seguinte forma :
 
-**Imagem aqui de como inserir o Bearer token no header da requisição**
+<p align="center">
+  <img alt="sergey" src="https://raw.githubusercontent.com/FlavioDias97/mjv-processo-seletivo/master/Contents/Imagens/imagem1token.png?token=AYq4wlIfKPTAyRiolOAzUXKIa1Y3JcSZks5cdjGSwA%3D%3D">
+</p>
+
+<p align="center">
+  <img alt="sergey" src="https://raw.githubusercontent.com/FlavioDias97/mjv-processo-seletivo/master/Contents/Imagens/imagem2token.png?token=AYq4wuA6awN2Lfk_DkuzfARcHboRvf9sks5cdjHRwA%3D%3D">
+</p>
