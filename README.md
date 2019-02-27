@@ -7,7 +7,7 @@
 
 ### Requisitos
 
-Tudo que será necessário para executar este projeto é o docker instalado em sua maquina, ou visual-studio(com modulo para aspnet.core webapi) + mysql
+Tudo que será necessário para executar este projeto é o docker instalado em sua máquina, ou visual-studio(com modulo para aspnet.core webapi) + mysql
 
 Para instalar o [docker no windows](https://docs.docker.com/v17.12/docker-for-windows/install/#install-docker-for-windows-desktop-app). Ou no linux, debian [docker no linux](https://docs.docker.com/v17.12/install/linux/docker-ce/debian/).
 
@@ -17,7 +17,7 @@ Para instalar o [docker no windows](https://docs.docker.com/v17.12/docker-for-wi
 
 Com o docker, execute os seguintes comandos na raiz do projeto **Marketplace-API-Docker**:[Aqui](https://github.com/FlavioDias97/mjv-processo-seletivo/tree/master/Marketplace-API-Docker).
 - Abra o terminal na raiz do projeto, e execute o seguinte comando : `docker-compose up -d --build`
-- O banco de dados deve ter sido criado automaticamente no conteiner criado, conecte-se ao mesmo utilizando um sgbd de sua preferencia e execute o script [DATABASE CREATE SCRIPT](https://github.com/FlavioDias97/mjv-processo-seletivo/blob/master/Contents/Banco%20de%20dados/Backup.sql). que irá criar as tabelas e cadastrar alguns dados.
+- O banco de dados deve ter sido criado automaticamente no container criado, conecte-se ao mesmo utilizando um sgbd de sua preferência e execute o script [DATABASE CREATE SCRIPT](https://github.com/FlavioDias97/mjv-processo-seletivo/blob/master/Contents/Banco%20de%20dados/Backup.sql). que irá criar as tabelas e cadastrar alguns dados.
 - Executando o seguinte comando, `docker ps -a`, deverá ver a seguinte saída:
 
 ```
@@ -26,7 +26,7 @@ b3e40287500e        jeltor/marketplace-api   "dotnet MarketplaceA…"   6 second
 3d9f994a8989        jeltor/mvj-mysql         "docker-entrypoint.s…"   8 seconds ago       Up 5 seconds        0.0.0.0:3306->3306/tcp   marketplace-api_db_1
 ```
 
-- Onde na porta localhost:5000 estará rodando a aplicação e em localhost:3306 o banco de dados. Ao ir a tela inicial da aplicação, verá o swagger em execução, onde terá uma documentação básica dos end-points, podendo utilizar os exemplos fornecidos pelo mesmo para teste utilizando o postman. **ABAIXO MAIS DETALHES SOBRE COMO EXECUTAR OS PRIMEIROS TESTES COM A APLICAÇÃO**.
+- Onde na porta localhost:5000 estará rodando a aplicação e em localhost:3306 o banco de dados. Ao ir na tela inicial da aplicação, verá o swagger em execução, onde terá uma documentação básica dos end-points, podendo utilizar os exemplos fornecidos pelo mesmo para teste utilizando o postman. **ABAIXO MAIS DETALHES SOBRE COMO EXECUTAR OS PRIMEIROS TESTES COM A APLICAÇÃO**.
 
 <p align="center">
   <img alt="sergey" src="https://raw.githubusercontent.com/FlavioDias97/mjv-processo-seletivo/master/Contents/Imagens/docker-compose1.png">
@@ -43,22 +43,22 @@ b3e40287500e        jeltor/marketplace-api   "dotnet MarketplaceA…"   6 second
 ### Executar através do visual studio
 
 - No visual studio vá até carregar nova solução, e execute a da pasta **Marketplace-API-Clean**:[Aqui](https://github.com/FlavioDias97/mjv-processo-seletivo/tree/master/Marketplace-API%20-Clean).
-E através da `ide` ao clickar em iniciar com `IISExpress` a api estará rodando em `http://localhost:3000/swagger/index.html` .
+E através da `ide` ao clicar em iniciar com `IISExpress` a api estará rodando em `http://localhost:3000/swagger/index.html` .
 
 - Também será necessário criar a base de dados, certifique-se de estar rodando um servidor mysql em sua máquina, e execute o seguinte script no `terminal mysql` ou em um `sgbd` : [DATABASE CREATE SCRIPT](https://github.com/FlavioDias97/mjv-processo-seletivo/blob/master/Contents/Banco%20de%20dados/Backup.sql)..
 
-- Como as configurações do mysql podem variar de maquina para maquina, será necessário de configurar a URL de conexão. Para isso, vá até a raiz do projeto, entre na pasta `Marketplace-API`, e então localize o arquivo `appsettings.json`, lá você encontrará o seguinte trecho:
+- Como as configurações do mysql podem variar de máquina para máquina, será necessário configurar a URL de conexão. Para isso, vá até a raiz do projeto, entre na pasta `Marketplace-API`, e então localize o arquivo `appsettings.json`, lá você encontrará o seguinte trecho:
 
 ```
  "MySqlConnection": {
     "MySqlConnectionString": "Server=localhost;DataBase=mjv_marketplace;Uid=root;Pwd=root"
   },
 ```
-Configure o Uid com o login de seu usuário mysql, e Pwd com a senha, e caso necessário, mude Server com a url em que está rodando seu servidor mysql. Como o banco de dados será criado com a execução do script, não será necessário alterar seu nome. Com isso o projeto irá rodar normalmente, e ficará apto para testes.
+Configure o Uid com o login de seu usuário mysql, e Pwd com a senha, e caso necessário, mude o Server com a url em que está rodando seu servidor mysql. Como o banco de dados será criado com a execução do script, não será necessário alterar seu nome. Com isso o projeto irá rodar normalmente, e ficará apto para testes.
 
-## Oque foi feito
+## O que foi feito
 
-Dentre oque foi proposto, oque está marcado com OK, foi feito:
+Dentre o que foi proposto, o que está marcado com OK, foi feito:
 
 - `Gerenciamento de lojas` -OK
 - `Gerenciamento de produtos` -OK
@@ -85,7 +85,7 @@ ou
 ```
 http://servidor:porta/api/v1/products/Search/ProductName/Geladeira
 ```
-- Este end-point, atende a funcionalidade de pesquisa, onde, a mesma espera por 2 parametros, sendo o primeiro o `Attribute`, no exemplo acima foi utilizado o ProductName, porém pode-se usar: Description, Category, Price, Quantity, store_id (id da loja), e o `term` onde é inserido a palavra chave para qualquer um dos attributes acima, no exemplo foi utilizado geladeira. Está consulta poderá trazer duas coleções de dados, sendo a primeira a coleção de produtos encontrados pelo termo pesquisado (pode ser mais de um, dependendo do resultado do like), e também produtos relacionados (Onde é feito o match pela categoria, do primeiro produto da coleção 1). Como no exemplo:
+- Este end-point, atende a funcionalidade de pesquisa, onde, a mesma espera por 2 parâmetros, sendo o primeiro o `Attribute`, no exemplo acima foi utilizado o ProductName, porém pode-se usar: Description, Category, Price, Quantity, store_id (id da loja), e o `term` onde é inserido a palavra chave para qualquer um dos attributes acima, no exemplo foi utilizado geladeira. Esta consulta poderá trazer duas coleções de dados, sendo a primeira a coleção de produtos encontrados pelo termo pesquisado (pode ser mais de um, dependendo do resultado do like), e também produtos relacionados (Onde é feito o match pela categoria, do primeiro produto da coleção 1). Como no exemplo:
 ```
 {
     "produtos": [
