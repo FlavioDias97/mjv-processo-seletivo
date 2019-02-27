@@ -192,5 +192,5 @@ E terá uma resposta parecida com isto:
 ### Tecnologias utilizadas
 
 <p align="center">
-  <img alt="sergey" src="https://imgur.com/a/qpwHh5p">
+  <img alt="sergey" src="https://i.imgur.com/zrttCqA.jpg">
 </p>
