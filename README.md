@@ -28,6 +28,18 @@ b3e40287500e        jeltor/marketplace-api   "dotnet MarketplaceA…"   6 second
 
 - Onde na porta localhost:5000 estará rodando a aplicação e em localhost:3306 o banco de dados. Ao ir a tela inicial da aplicação, verá o swagger em execução, onde terá uma documentação básica dos end-points, podendo utilizar os exemplos fornecidos pelo mesmo para teste utilizando o postman. **ABAIXO MAIS DETALHES SOBRE COMO EXECUTAR OS PRIMEIROS TESTES COM A APLICAÇÃO**.
 
+<p align="center">
+  <img alt="sergey" src="https://raw.githubusercontent.com/FlavioDias97/mjv-processo-seletivo/master/Contents/Imagens/docker-compose1.png">
+</p>
+
+<p align="center">
+  <img alt="sergey" src="https://raw.githubusercontent.com/FlavioDias97/mjv-processo-seletivo/master/Contents/Imagens/docker-compose%20final.png">
+</p>
+
+<p align="center">
+  <img alt="sergey" src="https://raw.githubusercontent.com/FlavioDias97/mjv-processo-seletivo/master/Contents/Imagens/docker-ps-a.png">
+</p>
+
 ### Executar através do visual studio
 
 - No visual studio vá até carregar nova solução, e execute a da pasta **Marketplace-API-Clean**:[Aqui](https://github.com/FlavioDias97/mjv-processo-seletivo/tree/master/Marketplace-API%20-Clean).
