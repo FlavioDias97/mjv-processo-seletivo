@@ -33,14 +33,20 @@ namespace MarketplaceAPI.Business.Implementattions
 
         public List<Product> FindByTerm(string entity, string atrribute, string term)
         {
-            return _repository.FindByTerm(entity,atrribute, term);
+            return _repository.FindByTerm(entity, atrribute, term);
+
+        }
+
+        public List<Product> GetRelated(string entity, string attribute, string term)
+        {
+             return _repository.GetRelated(entity, attribute, term);
         }
 
 
         public Product Update(Product product)
         {
-            return _repository.Update(product);
-
+           return _repository.Update(product);
+        
         }
     }
 }

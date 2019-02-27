@@ -45,10 +45,7 @@ namespace MarketplaceAPI.Repository.Generic
             {
                 throw ex;
             }
-
-
         }
-
         public bool Exist(long? id)
         {
             return dataset.Any(s => s.Id.Equals(id));
@@ -69,19 +66,28 @@ namespace MarketplaceAPI.Repository.Generic
             string query = "";
             if (entity.Equals("products"))
             {
-               query  = " SELECT PROD.Id,PROD.Image,PROD.NAME,PROD.price,PROD.Description ,PROD.Quantity, PROD.Category, STO.NAME AS 'store_id' FROM products AS PROD INNER JOIN stores AS STO " +
-                        "WHERE PROD."+ attribute + " LIKE '%"+term+"%' AND PROD.store_id = STO.Id";
+               query  = " SELECT PROD.Id,PROD.Image,PROD.ProductName,PROD.price,PROD.Description ,PROD.Quantity, PROD.Category, STO.FantasyName AS 'store_id' FROM products AS PROD INNER JOIN stores AS STO " +
+                        " WHERE PROD."+ attribute + " LIKE '%"+term+"%' AND PROD.store_id = STO.Id";
             }
-            
             else
             {
                 query = "SELECT * FROM " + entity + " WHERE " + attribute + " LIKE '%" + term + "%' ";
             }
-            //TODO: Implement parametrization because--> sqlinjection is possible
-            //TODO: Correct inner join by entities
             List<T> result = dataset
                 .FromSql(query)
                 .ToList();
+            return result;
+        }
+
+        public List<T> GetRelated(string entity, string attribute, string term)
+        {
+
+            var query = " SELECT * FROM " + entity + " WHERE " + attribute + " LIKE '%"+term+"%' ";
+          
+            List<T> result = dataset
+                .FromSql(query)
+                .ToList();
+
             return result;
         }
 

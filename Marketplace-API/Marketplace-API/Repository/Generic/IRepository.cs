@@ -10,7 +10,8 @@ namespace MarketplaceAPI.Repository.Generic
     {
         T Create(T item);
         T FindById(long id);
-        List<T> FindByTerm(string entity,string atrribute, string term);
+        List<T> FindByTerm(string entity,string attribute, string term);
+        List<T> GetRelated(string entity, string attribute, string term);
         List<T> FindAll();
         T Update(T item);
         void Delete(long id);

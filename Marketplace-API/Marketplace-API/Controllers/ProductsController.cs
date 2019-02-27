@@ -2,6 +2,7 @@
 using MarketplaceAPI.Business.Implementattions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using System.Collections.Generic;
 
 namespace MarketplaceAPI.Controllers
 {
@@ -58,14 +59,26 @@ namespace MarketplaceAPI.Controllers
         [ProducesResponseType(401)]
         [ProducesResponseType(404)]
         [Authorize("Bearer")]
-        public IActionResult FindByTerm(string atrribute, string term)
+        public IActionResult ProductByTerm(string atrribute, string term)
         {
-            //Attribute and term canot be null
+            
             if (atrribute == null || term == null) return BadRequest();
-            string entity = "products"; //hardcoded entity for generic method
+            string entity = "products"; 
             var product = _productBusiness.FindByTerm(entity,atrribute,term);
-            if (product == null) return NotFound();
-            return Ok(product);
+          
+            if (product.Count == 0) return NotFound();
+
+            var categoryTerm = product[0].Category;
+            var related = _productBusiness.GetRelated(entity, "Category", categoryTerm);
+
+            var response = new
+            {
+                Produtos = product,
+                Produtos_Relacionados = related
+
+            };
+           
+            return Ok(response);
         }
 
         /// <summary>

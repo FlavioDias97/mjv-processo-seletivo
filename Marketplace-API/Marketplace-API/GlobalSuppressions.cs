@@ -5,4 +5,5 @@
 // a specific target and scoped to a namespace, type, member, etc.
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Security", "EF1000:Possible SQL injection vulnerability.", Justification = "<Pendente>", Scope = "member", Target = "~M:MarketplaceAPI.Repository.Generic.GenericRepository`1.FindByTerm(System.String,System.String,System.String)~System.Collections.Generic.List{`0}")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Security", "EF1000:Possible SQL injection vulnerability.", Justification = "<Pending>", Scope = "member", Target = "~M:MarketplaceAPI.Repository.Generic.GenericRepository`1.GetRelated(System.String,System.String,System.String)~System.Collections.Generic.List{`0}")]
 
