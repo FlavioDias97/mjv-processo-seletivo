@@ -66,7 +66,7 @@ Dentre o que foi proposto, o que está marcado com OK, foi feito:
 
 Detalhes:
 
-- `Avaliação 5 estrelas da loja no resultado da pesquisa` -
+- `Avaliação 5 estrelas da loja no resultado da pesquisa` - ? Este ponto não ficou claro.
 - `Exibir produtos relacionados` -OK
 
 Bom ter:
@@ -75,7 +75,7 @@ Bom ter:
 - `Autenticação a aplicação / JWT` -OK
 - `Annotations` -OK
 - `Design Pattern` -OK
-- `Live Demo` -IN PROGRESS
+- `Live Demo` - 
 
 ## Explicação de alguns end-points:
 ```
