@@ -187,3 +187,10 @@ E terá uma resposta parecida com isto:
 <p align="center">
   <img alt="sergey" src="https://raw.githubusercontent.com/FlavioDias97/mjv-processo-seletivo/master/Contents/Imagens/imagem2token.png?token=AYq4wuA6awN2Lfk_DkuzfARcHboRvf9sks5cdjHRwA%3D%3D">
 </p>
+
+
+### Tecnologias utilizadas
+
+<p align="center">
+  <img alt="sergey" src="https://imgur.com/a/qpwHh5p">
+</p>
