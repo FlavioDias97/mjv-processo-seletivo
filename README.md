@@ -56,6 +56,84 @@ Detalhes:
 - `Avaliação 5 estrelas da loja no resultado da pesquisa` -
 - `Exibir produtos relacionados` -OK
 
+Bom ter:
+
+- `Testes automatizados / unitários` -
+- `Autenticação a aplicação / JWT` -OK
+- `Annotations` -OK
+- `Design Pattern` -OK
+- `Live Demo` -IN PROGRESS
+
+## Explicação de alguns end-points:
+```
+curl -X GET "http://servidor:porta/api/v1/products/Search/ProductName/Geladeira" -H "accept: application/json"
+```
+ou
+```
+http://servidor:porta/api/v1/products/Search/ProductName/Geladeira
+```
+- Este end-point, atende a funcionalidade de pesquisa, onde, a mesma espera por 2 parametros, sendo o primeiro o `Attribute`, no exemplo acima foi utilizado o ProductName, porém pode-se usar: Description, Category, Price, Quantity, store_id (id da loja), e o `term` onde é inserido a palavra chave para qualquer um dos attributes acima, no exemplo foi utilizado geladeira. Está consulta poderá trazer duas coleções de dados, sendo a primeira a coleção de produtos encontrados pelo termo pesquisado (pode ser mais de um, dependendo do resultado do like), e também produtos relacionados (Onde é feito o match pela categoria, do primeiro produto da coleção 1). Como no exemplo:
+```
+{
+    "produtos": [
+        {
+            "Código": 1,
+            "Nome do Produto": "GTX 1080 TI",
+            " Descrição": "Placa de video",
+            "Categoria": "Hardware",
+            "Imagem": "gtx1080.com/imagem",
+            "Preço": 1000,
+            "Quantidade em estoque": 100,
+            "Loja": "Pichau informatica"
+        }
+    ],
+    "produtos_Relacionados": [
+        {
+            "Código": 1,
+            "Nome do Produto": "GTX 1050 TI",
+            " Descrição": "Placa de video",
+            "Categoria": "Hardware",
+            "Imagem": "gtx1080.com/imagem",
+            "Preço": 1000,
+            "Quantidade em estoque": 100,
+            "Loja": "Pichau informatica"
+        }
+    ]
+}
+```
+*Resultado meramente ilustrativo*
+
+Já o gerenciamento de lojas e produtos, são os end-points comuns dos principais verbos http, para ambos possui-se get, getbyId, getByTerm (endpoint mencionado acima [Funciona também para loja, porém sem o relacionados]), post, put e delete. Como por exemplo:
+
+- Get products
+```
+curl -X GET "http://servidor:porta/api/v1/products" -H "accept: application/json"
+
+http://porta:servidor/api/v1/products
+```
+
+
+- Post products
+```
+curl -X POST "http://servidor:porta/api/v1/products" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -d "{ \"Código\": 0, \"Nome do Produto\": \"string\", \" Descrição\": \"string\", \"Categoria\": \"string\", \"Imagem\": \"string\", \"Preço\": 0, \"Quantidade em estoque\": 0, \"Loja\": \"string\"}"
+
+http://servidor:porta/api/v1/products
+Body:
+{
+  "Código": 0,
+  "Nome do Produto": "string",
+  " Descrição": "string",
+  "Categoria": "string",
+  "Imagem": "string",
+  "Preço": 0,
+  "Quantidade em estoque": 0,
+  "Loja": "string"
+}
+
+```
+
+Todas as rotas e exemplos são exibidas no swagger.
+
 ## Guia básico para como testar
 
 Antes de realizar qualquer requisição com o servidor, será necessário efetuar o login para receber o token de autenticação, para isso, realize um post para a rota `https://servidor:porta/api/v1/login` com o seguinte body em `raw / type JSON(application/json)` :
@@ -82,4 +160,6 @@ E terá uma resposta parecida com isto:
 }
 ```
 
-Onde o conteúdo de `acessToken` será a chave necessária para autenticar as outras requisições
+- Onde o conteúdo de `acessToken` será a chave necessária para autenticar as outras requisições. No postman, este `acessToken` deverá ser utilizado da seguinte forma :
+
+**Imagem aqui de como inserir o Bearer token no header da requisição**
