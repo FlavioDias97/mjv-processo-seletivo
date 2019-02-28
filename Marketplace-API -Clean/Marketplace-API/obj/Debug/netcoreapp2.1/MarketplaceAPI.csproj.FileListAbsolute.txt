@@ -1,0 +1,14 @@
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\bin\Debug\netcoreapp2.1\MarketplaceAPI.deps.json
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\bin\Debug\netcoreapp2.1\MarketplaceAPI.runtimeconfig.json
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\bin\Debug\netcoreapp2.1\MarketplaceAPI.runtimeconfig.dev.json
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\bin\Debug\netcoreapp2.1\MarketplaceAPI.dll
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\bin\Debug\netcoreapp2.1\MarketplaceAPI.pdb
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\obj\Debug\netcoreapp2.1\MarketplaceAPI.csprojAssemblyReference.cache
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\obj\Debug\netcoreapp2.1\MarketplaceAPI.csproj.CoreCompileInputs.cache
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\obj\Debug\netcoreapp2.1\MarketplaceAPI.RazorAssemblyInfo.cache
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\obj\Debug\netcoreapp2.1\MarketplaceAPI.RazorAssemblyInfo.cs
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\obj\Debug\netcoreapp2.1\MarketplaceAPI.AssemblyInfoInputs.cache
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\obj\Debug\netcoreapp2.1\MarketplaceAPI.AssemblyInfo.cs
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\obj\Debug\netcoreapp2.1\MarketplaceAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\obj\Debug\netcoreapp2.1\MarketplaceAPI.dll
+C:\Users\Flávio\Desktop\mjv-processo-seletivo\Marketplace-API\Marketplace-API\obj\Debug\netcoreapp2.1\MarketplaceAPI.pdb
