@@ -12056,11 +12056,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API-Docker\\Marketplace-API\\MarketplaceAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API -Clean\\Marketplace-API\\MarketplaceAPI.csproj",
       "projectName": "MarketplaceAPI",
-      "projectPath": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API-Docker\\Marketplace-API\\MarketplaceAPI.csproj",
+      "projectPath": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API -Clean\\Marketplace-API\\MarketplaceAPI.csproj",
       "packagesPath": "C:\\Users\\Flávio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API-Docker\\Marketplace-API\\obj\\",
+      "outputPath": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API -Clean\\Marketplace-API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

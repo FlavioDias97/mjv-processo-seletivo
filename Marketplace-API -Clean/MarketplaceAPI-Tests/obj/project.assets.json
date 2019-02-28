@@ -7502,11 +7502,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API-Docker\\MarketplaceAPI-Tests\\MarketplaceAPI-Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API -Clean\\MarketplaceAPI-Tests\\MarketplaceAPI-Tests.csproj",
       "projectName": "MarketplaceAPI-Tests",
-      "projectPath": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API-Docker\\MarketplaceAPI-Tests\\MarketplaceAPI-Tests.csproj",
+      "projectPath": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API -Clean\\MarketplaceAPI-Tests\\MarketplaceAPI-Tests.csproj",
       "packagesPath": "C:\\Users\\Flávio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API-Docker\\MarketplaceAPI-Tests\\obj\\",
+      "outputPath": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API -Clean\\MarketplaceAPI-Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7525,8 +7525,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API-Docker\\Marketplace-API\\MarketplaceAPI.csproj": {
-              "projectPath": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API-Docker\\Marketplace-API\\MarketplaceAPI.csproj"
+            "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API -Clean\\Marketplace-API\\MarketplaceAPI.csproj": {
+              "projectPath": "C:\\Users\\Flávio\\Desktop\\mjv-processo-seletivo\\Marketplace-API -Clean\\Marketplace-API\\MarketplaceAPI.csproj"
             }
           }
         }
